@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-feedback-edit></app-feedback-edit>
+    <hr>
+    <ul class="list-group">
+      <a 
+        class="list-group-item"  
+        style="cursor: pointer"
+        *ngFor="let wellbeing of overallWellbeing"
+        >
+      {{ wellbeing.name }}: {{ wellbeing.state }}
+    </a>
+    </ul>
+  </div>
+</div>

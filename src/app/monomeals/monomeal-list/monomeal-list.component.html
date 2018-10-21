@@ -6,17 +6,9 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <a href="#" 
-      class="list-group-item clearfix" 
-      *ngFor="let singleMonomeal of monomeals">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading"> {{ singleMonomeal.name }} </h4>
-        <p class="list-group-item-text" style="max-height: 50px;"> {{ singleMonomeal.description }} </p>
-      </div>
-      <span class="pull-right">
-        <img [src]="singleMonomeal.imagePath" alt="{{ singleMonomeal.name}}" class="img-responsive" style="height: 7em;">
-      </span>
-    </a>
-    <app-monomeal-item></app-monomeal-item>
+    <app-monomeal-item
+    *ngFor="let monomEl of monomeals"
+    [monomeal]="monomEl"
+    (monomealSelected)="onMonomealSelected(monomEl)"></app-monomeal-item>
   </div>
 </div>

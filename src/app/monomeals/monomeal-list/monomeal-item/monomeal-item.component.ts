@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+
+import { Monomeal } from '../../monomeal.model';
 
 @Component({
   selector: 'app-monomeal-item',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monomeal-item.component.css']
 })
 export class MonomealItemComponent implements OnInit {
+  @Input() monomeal: Monomeal;
+  @Output() monomealSelected = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelected() {
+    this.monomealSelected.emit();
+  }
 }

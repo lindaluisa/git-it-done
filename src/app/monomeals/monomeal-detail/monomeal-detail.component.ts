@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Monomeal } from '../monomeal.model';
 
 @Component({
   selector: 'app-monomeal-detail',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monomeal-detail.component.css']
 })
 export class MonomealDetailComponent implements OnInit {
-
+  @Input() monomeal: Monomeal;
   constructor() { }
 
   ngOnInit() {

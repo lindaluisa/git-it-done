@@ -1,11 +1,14 @@
-<a href="#" 
-class="list-group-item clearfix" 
-*ngFor="let singleMonomeal of monomeals">
+<a href="#" class="list-group-item clearfix" 
+(click)="onSelected()">
 <div class="pull-left">
-  <h4 class="list-group-item-heading"> {{ singleMonomeal.name }} </h4>
-  <p class="list-group-item-text" style="max-height: 50px;"> {{ singleMonomeal.description }} </p>
+  <h4 class="list-group-item-heading"> {{ monomeal.name }} </h4>
+  <p class="list-group-item-text" style="max-height: 50px;"> {{ monomeal.description }} </p>
 </div>
 <span class="pull-right">
-  <img [src]="singleMonomeal.imagePath" alt="{{ singleMonomeal.name}}" class="img-responsive" style="height: 7em;">
+  <img 
+    [src]="monomeal.imagePath" 
+    alt="{{ monomeal.name}}" 
+    class="img-responsive" 
+    style="height: 7em;">
 </span>
 </a>

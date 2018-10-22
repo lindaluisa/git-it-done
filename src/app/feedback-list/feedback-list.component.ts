@@ -18,4 +18,7 @@ export class FeedbackListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onWellbeingAdded(wellbeing: Wellbeing) {
+    this.overallWellbeing.push(wellbeing);
+  }
 }

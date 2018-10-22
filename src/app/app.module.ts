@@ -11,6 +11,8 @@ import { MonomealItemComponent } from './monomeals/monomeal-list/monomeal-item/m
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { FeedbackEditComponent } from './feedback-list/feedback-edit/feedback-edit.component';
 
+import { DropdownDirective } from 'src/app/shared/dropdown.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { FeedbackEditComponent } from './feedback-list/feedback-edit/feedback-ed
     MonomealDetailComponent,
     MonomealItemComponent,
     FeedbackListComponent,
-    FeedbackEditComponent
+    FeedbackEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

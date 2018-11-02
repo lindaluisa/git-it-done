@@ -10,7 +10,7 @@
   color: $primary-color-default;
 
   &:hover {
-    color: $primary-color-dark;
+    color: $primary-color-light;
   }
 }
 
@@ -27,6 +27,6 @@
   }
 
   li a:hover {
-    color: $secondary-color-default;
+    color: $primary-color-light;
   }
 }

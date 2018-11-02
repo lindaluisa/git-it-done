@@ -1,13 +1,27 @@
+.btn {
+  padding: 0.5em 1.5em 0 1.5em; }
+
 .default-button {
-  background-color: #20a5813b;
-  border-color: #0a8d69cf;
-  color: #0a8d69cf;
-  padding: 0.5; }
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  background-color: #f3fffc;
+  border-color: #f3fffc;
+  box-shadow: 0px 8px 0 0 #9c4f4f;
+  color: #9c4f50;
+  border-radius: 0px !important;
+  margin-bottom: 1em; }
+  .default-button:hover {
+    background-color: #f3fffc;
+    border-color: transparent;
+    box-shadow: 0px 8px 0 0 #720000;
+    color: #720000; }
 
 .container-fluid {
   padding: 1.5em; }
 
 .custom-container {
+  font-family: "Abel", sans-serif;
+  color: #720000;
   background-color: #f3fffc;
   margin: 0;
   padding: 5em 0;
@@ -23,7 +37,7 @@
   font-size: 4em;
   color: #720000; }
   .navbar-default .navbar-brand:hover {
-    color: #c41414; }
+    color: #9c4f4f; }
 
 .navbar-default .navbar-nav {
   font-family: "Abel", sans-serif;
@@ -33,4 +47,42 @@
   .navbar-default .navbar-nav li a {
     color: #720000; }
   .navbar-default .navbar-nav li a:hover {
-    color: #20a5813b; }
+    color: #9c4f4f; }
+
+.list-group-item {
+  background-color: #cdeae2;
+  box-shadow: 0px 8px 0 0 #9c4f4f;
+  margin-bottom: 1em;
+  border-radius: 0px !important; }
+  .list-group-item:hover {
+    color: #f3fffc !important;
+    background-color: #9c4f4f !important;
+    box-shadow: 0px 8px 0 0 #20a5813b;
+    border-radius: 0px !important; }
+  .list-group-item:hover .list-group-item-heading {
+    color: #f3fffc !important; }
+  .list-group-item:hover .list-group-item-text {
+    color: #f3fffc !important; }
+
+.list-group-item-heading {
+  color: #720000 !important;
+  font-weight: bold;
+  font-size: 2.5em;
+  letter-spacing: 0px;
+  text-transform: uppercase; }
+
+.list-group-item-text {
+  font-size: 1em;
+  color: #c41414 !important;
+  font-size: 1.5em; }
+
+.img-sizing {
+  width: 20%; }
+
+.img-responsive {
+  height: 7em; }
+
+.cta-text {
+  font-size: 2.5em;
+  text-align: center;
+  font-family: "Lobster", cursive; }

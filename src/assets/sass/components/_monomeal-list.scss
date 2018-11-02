@@ -1,0 +1,44 @@
+
+  .list-group-item {
+    background-color: $secondary-color-dark;
+    box-shadow: 0px 8px 0 0 $primary-color-light;
+    margin-bottom: 1em;
+    border-radius: 0px !important;
+
+    &:hover {
+      color: $secondary-color-light !important;
+      background-color: $primary-color-light !important;
+      box-shadow: 0px 8px 0 0 $secondary-color-default;
+      border-radius: 0px !important;
+    }
+
+    &:hover .list-group-item-heading {
+      color: $secondary-color-light !important;
+    }
+
+    &:hover .list-group-item-text {
+      color: $secondary-color-light !important;
+    }
+  }
+  
+  .list-group-item-heading {
+    color: $primary-color-default !important;
+    font-weight: bold;
+    font-size: 2.5em;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+}
+  
+  .list-group-item-text {
+    font-size: 1em;
+    color: $primary-color-dark !important;
+    font-size: $medium-font-size;
+}
+
+.img-sizing {
+  width: 20%;
+}
+
+.img-responsive {
+  height: 7em;
+}

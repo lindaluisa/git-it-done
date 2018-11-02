@@ -4,11 +4,13 @@
   <h4 class="list-group-item-heading"> {{ monomeal.name }} </h4>
   <p class="list-group-item-text" style="max-height: 50px;"> {{ monomeal.description }} </p>
 </div>
-<span class="pull-right">
-  <img 
-    [src]="monomeal.imagePath" 
-    alt="{{ monomeal.name}}" 
-    class="img-responsive" 
-    style="height: 7em;">
+<span class="img-sizing pull-right">
+    <img 
+      [src]="monomeal.imagePath" 
+      alt="{{ monomeal.name}}" 
+      class="img-responsive" 
+      >
 </span>
 </a>
+<br>
+

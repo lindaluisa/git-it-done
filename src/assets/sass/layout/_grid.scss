@@ -3,6 +3,8 @@
 }
 
 .custom-container {
+    font-family: $default-font-family;
+    color: $primary-color-default;
     background-color: $secondary-color-light;
     margin: 0;
     padding: 5em 0;

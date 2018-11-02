@@ -1,7 +1,25 @@
+.btn {
+  padding: 0.5em 1.5em 0 1.5em;
+}
 
 .default-button {
-  background-color: $secondary-color-default;
-  border-color: $secondary-color-dark;
-  color: $secondary-color-dark;
-  padding: 0.5
+  font-family: $default-header-font;
+  font-size: 2em;
+  background-color: $secondary-color-light;
+  border-color: $secondary-color-light ;
+  box-shadow: 0px 8px 0 0 $primary-color-light;
+  color: #9c4f50;
+  border-radius: 0px !important;
+  margin-bottom: 1em;
+
+  &:hover {
+    background-color: $secondary-color-light;
+    border-color: transparent;
+    box-shadow: 0px 8px 0 0 $primary-color-default;
+    color: $primary-color-default;
+  }
 }
+
+
+// fcfdfd80
+// #dbc3c3

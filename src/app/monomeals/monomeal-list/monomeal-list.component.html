@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Monomeal</button>
+    <app-monomeal-item
+    *ngFor="let monomEl of monomeals"
+    [monomeal]="monomEl"
+    (monomealSelected)="onMonomealSelected(monomEl)"></app-monomeal-item>
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <app-monomeal-item
-    *ngFor="let monomEl of monomeals"
-    [monomeal]="monomEl"
-    (monomealSelected)="onMonomealSelected(monomEl)"></app-monomeal-item>
+    <button class="btn btn-success default-button">New Monomeal</button>
   </div>
 </div>

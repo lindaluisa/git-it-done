@@ -3,8 +3,7 @@ import { Monomeal } from '../monomeal.model';
 
 @Component({
   selector: 'app-monomeal-list',
-  templateUrl: './monomeal-list.component.html',
-  styleUrls: ['./monomeal-list.component.css']
+  templateUrl: './monomeal-list.component.html'
 })
 export class MonomealListComponent implements OnInit {
   @Output() monomealWasSelected = new EventEmitter<Monomeal>();

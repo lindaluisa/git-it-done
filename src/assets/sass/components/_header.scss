@@ -1,0 +1,32 @@
+.navbar-default {
+  background-color: $secondary-color-default;
+  box-shadow: 0 1px 18px lightgrey;
+  margin: 0;
+}
+
+.navbar-default .navbar-brand {
+  font-family: $default-header-font;
+  font-size: $big-font-size;
+  color: $primary-color-default;
+
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+.navbar-default .navbar-nav {
+  font-family: $default-font-family;
+  font-size: $medium-font-size;
+  
+  li  {
+    padding: 7px 0;
+  }
+  
+  li a {
+    color: $primary-color-default;
+  }
+
+  li a:hover {
+    color: $secondary-color-default;
+  }
+}

@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+.default-button {
+  background-color: #20a5813b;
+  border-color: #0a8d69cf;
+  color: #0a8d69cf;
+  padding: 0.5em 3em; }
+
+.container-fluid {
+  padding: 1.5em; }
+
+.custom-container {
+  background-color: #f3fffc;
+  margin: 0;
+  padding: 5em 0;
+  height: 100vh; }
+
+.navbar-default {
+  background-color: #20a5813b;
+  box-shadow: 0 1px 18px lightgrey;
+  margin: 0; }
+
+.navbar-default .navbar-brand {
+  font-family: "Lobster", cursive;
+  font-size: 4em;
+  color: #720000; }
+  .navbar-default .navbar-brand:hover {
+    color: #c41414; }
+
+.navbar-default .navbar-nav {
+  font-family: "Abel", sans-serif;
+  font-size: 1.5em; }
+  .navbar-default .navbar-nav li {
+    padding: 7px 0; }
+  .navbar-default .navbar-nav li a {
+    color: #720000; }
+  .navbar-default .navbar-nav li a:hover {
+    color: #20a5813b; }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 import { Monomeal } from '../../monomeal.model';
+import { MonomealService } from '../../monomeal.service';
 
 @Component({
   selector: 'app-monomeal-item',
@@ -8,14 +9,14 @@ import { Monomeal } from '../../monomeal.model';
 })
 export class MonomealItemComponent implements OnInit {
   @Input() monomeal: Monomeal;
-  @Output() monomealSelected = new EventEmitter<void>();
+/*   @Output() monomealSelected = new EventEmitter<void>();*/
 
-  constructor() { }
+  constructor(private monomealService: MonomealService) { }
 
   ngOnInit() {
   }
 
   onSelected() {
-    this.monomealSelected.emit();
+    this.monomealService.monomealSelected.emit(this.monomeal);
   }
 }

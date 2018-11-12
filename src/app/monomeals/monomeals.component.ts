@@ -11,9 +11,15 @@ import { MonomealService } from './monomeal.service';
 export class MonomealsComponent implements OnInit {
   selectedMonomeal: Monomeal;
 
-  constructor() { }
+  constructor(private monomealService: MonomealService) { }
 
   ngOnInit() {
+    this.monomealService.monomealSelected
+    .subscribe(
+      (monomeal: Monomeal) => {
+        this.selectedMonomeal = monomeal;
+      }
+    );
   }
 
 }

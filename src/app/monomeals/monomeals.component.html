@@ -1,15 +1,18 @@
 <div class="row">
   <div class="col-md-5">
+
+<!--     <p class="cta-text" #infoText *ngIf="!selectedMonomeal; else infoText"> Please select a Monomeal!</p>
+ -->  
     <app-monomeal-list
     (monomealWasSelected)="selectedMonomeal = $event"></app-monomeal-list>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-5">
     <app-monomeal-detail
-      *ngIf="selectedMonomeal; else infoText"
+      *ngIf="selectedMonomeal; else infoText2"
       [monomeal]="selectedMonomeal"
       ></app-monomeal-detail>
-    <ng-template #infoText>
-      <p class="cta-text">Please select a Monomeal!</p>
+    <ng-template #infoText2>
+      <p class="">Get to know you better.</p>
     </ng-template>
   </div>
 </div>

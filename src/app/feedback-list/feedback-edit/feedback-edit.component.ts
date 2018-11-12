@@ -21,6 +21,7 @@ export class FeedbackEditComponent implements OnInit {
     const wellbeingName = this.nameInputRef.nativeElement.value;
     const stateAmount = this.amountInputRef.nativeElement.value;
     const newWellbeing = new Wellbeing(wellbeingName, stateAmount);
+    this.wellbeingAdded.emit(newWellbeing);
   }
 
 

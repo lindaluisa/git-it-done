@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { Wellbeing } from '../../shared/wellbeing.model';
 
@@ -11,7 +11,6 @@ import { Wellbeing } from '../../shared/wellbeing.model';
 export class FeedbackEditComponent implements OnInit {
 @ViewChild('nameInput') nameInputRef: ElementRef;
 @ViewChild('amountInput') amountInputRef: ElementRef;
-@Output() wellbeingAdded = new EventEmitter<Wellbeing>();
 
   constructor() { }
   ngOnInit() {
@@ -21,7 +20,6 @@ export class FeedbackEditComponent implements OnInit {
     const wellbeingName = this.nameInputRef.nativeElement.value;
     const stateAmount = this.amountInputRef.nativeElement.value;
     const newWellbeing = new Wellbeing(wellbeingName, stateAmount);
-    this.wellbeingAdded.emit(newWellbeing);
   }
 
 

@@ -15,9 +15,11 @@ export class FeedbackListComponent implements OnInit {
 
   ngOnInit() {
     this.overallWellbeing = this.feedbacklistService.getWellbeing();
-  }
-
-  onWellbeingAdded(wellbeing: Wellbeing) {
-    this.overallWellbeing.push(wellbeing);
+    this.feedbacklistService.updatedWellbeing
+      .subscribe(
+        (wellbeing: Wellbeing[]) => {
+          this.overallWellbeing = wellbeing;
+        }
+      );
   }
 }

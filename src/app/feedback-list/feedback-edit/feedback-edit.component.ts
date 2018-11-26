@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { Wellbeing } from '../../shared/wellbeing.model';
+import { FeedbackListService } from '../feedback-list.service';
 
 @Component({
   selector: 'app-feedback-edit',
@@ -12,7 +13,7 @@ export class FeedbackEditComponent implements OnInit {
 @ViewChild('nameInput') nameInputRef: ElementRef;
 @ViewChild('amountInput') amountInputRef: ElementRef;
 
-  constructor() { }
+  constructor(private feedbacklistService: FeedbackListService) { }
   ngOnInit() {
   }
 
@@ -20,6 +21,7 @@ export class FeedbackEditComponent implements OnInit {
     const wellbeingName = this.nameInputRef.nativeElement.value;
     const stateAmount = this.amountInputRef.nativeElement.value;
     const newWellbeing = new Wellbeing(wellbeingName, stateAmount);
+    this.feedbacklistService.addWellbeing(newWellbeing);
   }
 
 

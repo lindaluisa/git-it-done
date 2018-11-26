@@ -5,12 +5,12 @@ export class Monomeal {
     public name: string;
     public description: string;
     public imagePath: string;
-    public wellbeing: Wellbeing[];
+    public wellbeings: Wellbeing[];
 
-    constructor(name: string, desc: string, imgPath: string, wellbeing: Wellbeing[]) {
+    constructor(name: string, desc: string, imgPath: string, wellbeings: Wellbeing[]) {
         this.name = name;
         this.description = desc;
         this.imagePath = imgPath;
-        this.wellbeing = wellbeing;
+        this.wellbeings = wellbeings;
     }
 }

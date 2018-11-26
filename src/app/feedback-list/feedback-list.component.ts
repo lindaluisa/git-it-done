@@ -8,10 +8,7 @@ import { Wellbeing } from '../shared/wellbeing.model';
   styleUrls: ['./feedback-list.component.css']
 })
 export class FeedbackListComponent implements OnInit {
-  overallWellbeing: Wellbeing[] = [
-    new Wellbeing('Strawberries', 8),
-    new Wellbeing('Avocado', 9)
-  ];
+  overallWellbeing: Wellbeing[];
   
   constructor() { }
 

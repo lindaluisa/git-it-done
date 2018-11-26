@@ -13,6 +13,7 @@ import { FeedbackEditComponent } from './feedback-list/feedback-edit/feedback-ed
 
 import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 import { FeedbackListService } from './feedback-list/feedback-list.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { FeedbackListService } from './feedback-list/feedback-list.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
+
   ],
   providers: [FeedbackListService],
   bootstrap: [AppComponent]

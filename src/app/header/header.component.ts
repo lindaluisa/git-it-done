@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 
@@ -8,11 +8,5 @@ import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/cor
 })
 
 export class HeaderComponent {
- @Output() featureSelected = new EventEmitter<string>();
-
-
-  onSelect(feature: string) { // string received when method is called
-    this.featureSelected.emit(feature);
-  }
 
 }

@@ -9,4 +9,8 @@ export class FeedbackListService {
   getWellbeing() {
     return this.overallWellbeing.slice();
   }
+
+  addWellbeing(wellbeing) {
+    this.overallWellbeing.push(wellbeing);
+  }
 }

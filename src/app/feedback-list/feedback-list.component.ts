@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Wellbeing } from '../shared/wellbeing.model';
+import { FeedbackListService } from './feedback-list.service';
 
 @Component({
   selector: 'app-feedback-list',
@@ -9,10 +10,11 @@ import { Wellbeing } from '../shared/wellbeing.model';
 })
 export class FeedbackListComponent implements OnInit {
   overallWellbeing: Wellbeing[];
-  
-  constructor() { }
+
+  constructor(private feedbacklistService: FeedbackListService) { }
 
   ngOnInit() {
+    this.overallWellbeing = this.feedbacklistService.getWellbeing();
   }
 
   onWellbeingAdded(wellbeing: Wellbeing) {

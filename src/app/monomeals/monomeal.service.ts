@@ -1,8 +1,11 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { Monomeal } from './monomeal.model';
 import { Wellbeing } from '../shared/wellbeing.model';
 
+import { FeedbackListService } from '../feedback-list/feedback-list.service';
+
+@Injectable()
 export class MonomealService  {
   monomealSelected = new EventEmitter<Monomeal>();
   private monomeals: Monomeal[] = [
@@ -20,7 +23,13 @@ export class MonomealService  {
       ] )
 ];
 
+  constructor( private feedbackListService: FeedbackListService) {}
+
   getMonomeals() {
     return this.monomeals.slice();
+  }
+
+  addStatesToFeedbackList(states: Wellbeing[]) {
+    this.feedbackListService.addStates(states);
   }
 }

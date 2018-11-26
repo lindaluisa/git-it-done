@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Monomeal } from '../monomeal.model';
+import { MonomealService } from '../monomeal.service';
 
 @Component({
   selector: 'app-monomeal-detail',
@@ -8,9 +9,14 @@ import { Monomeal } from '../monomeal.model';
 })
 export class MonomealDetailComponent implements OnInit {
   @Input() monomeal: Monomeal;
-  constructor() { }
+
+  constructor(private monomealService: MonomealService) { }
 
   ngOnInit() {
   }
 
+
+  onAddToFeedbackList() {
+    this.monomealService.addStatesToFeedbackList(this.monomeal.wellbeings);
+  }
 }

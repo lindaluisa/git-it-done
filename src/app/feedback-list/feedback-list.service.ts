@@ -17,4 +17,13 @@ export class FeedbackListService {
     this.overallWellbeing.push(wellbeing);
     this.updatedWellbeing.emit(this.overallWellbeing.slice());
   }
+
+  addStates(states: Wellbeing[]) {
+ /* for (let state of states) {
+      this.addWellbeing(state);
+    } */
+    this.overallWellbeing.push(...states);
+    this.updatedWellbeing.emit(this.overallWellbeing.slice());
+  }
 }
+

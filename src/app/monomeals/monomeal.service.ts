@@ -29,6 +29,10 @@ export class MonomealService  {
     return this.monomeals.slice();
   }
 
+  getMonomeal(index: number) {
+    return this.monomeals[index]
+  }
+
   addStatesToFeedbackList(states: Wellbeing[]) {
     this.feedbackListService.addStates(states);
   }

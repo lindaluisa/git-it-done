@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { Monomeal } from '../monomeal.model';
 import { MonomealService } from '../monomeal.service';
 
@@ -10,11 +12,15 @@ export class MonomealListComponent implements OnInit {
   monomeals: Monomeal[];
 
 
-  constructor(private monomealService: MonomealService) { }
+  constructor(private monomealService: MonomealService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.monomeals = this.monomealService.getMonomeals();
   }
 
+  onNewMonomeal() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
 }

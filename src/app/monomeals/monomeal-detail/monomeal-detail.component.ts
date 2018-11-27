@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Monomeal } from '../monomeal.model';
 import { MonomealService } from '../monomeal.service';
@@ -13,7 +13,8 @@ export class MonomealDetailComponent implements OnInit {
   id: number;
 
   constructor(private monomealService: MonomealService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
 /*     const id = this.route.snapshot.params['id']; would work only for the first the detail cmp is loaded */
@@ -29,5 +30,10 @@ export class MonomealDetailComponent implements OnInit {
 
   onAddToFeedbackList() {
     this.monomealService.addStatesToFeedbackList(this.monomeal.wellbeings);
+  }
+
+  onEditMonomeal() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+/*     this.router.navigate(['../', this.id], { relativeTo: this.route }); */
   }
 }

@@ -8,7 +8,7 @@ import { Monomeal } from '../../monomeal.model';
 })
 export class MonomealItemComponent implements OnInit {
   @Input() monomeal: Monomeal;
-/*   @Output() monomealSelected = new EventEmitter<void>();*/
+  @Input() index: number;
 
 
   ngOnInit() {

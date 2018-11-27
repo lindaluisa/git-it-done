@@ -30,7 +30,7 @@ export class MonomealService  {
   }
 
   getMonomeal(index: number) {
-    return this.monomeals[index]
+    return this.monomeals[index];
   }
 
   addStatesToFeedbackList(states: Wellbeing[]) {

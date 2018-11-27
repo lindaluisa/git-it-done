@@ -3,9 +3,9 @@
       <p class="cta-text"> Please select a Monomeal!</p>
 
     <app-monomeal-item
-    *ngFor="let monomEl of monomeals"
-    [monomeal]="monomEl">
-  </app-monomeal-item>
+    *ngFor="let monomEl of monomeals; let i = index"
+    [monomeal]="monomEl"
+    [index]="i"></app-monomeal-item>
   </div>
 </div>
 <br>
@@ -17,4 +17,4 @@
   </div>
 </div>
 
-<!-- btn-success -->
+<!-- btn-success --> 

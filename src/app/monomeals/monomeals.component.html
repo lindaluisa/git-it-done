@@ -6,12 +6,6 @@
     <app-monomeal-list></app-monomeal-list>
   </div>
   <div class="col-md-5">
-    <app-monomeal-detail
-      *ngIf="selectedMonomeal; else infoText2"
-      [monomeal]="selectedMonomeal"
-      ></app-monomeal-detail>
-    <ng-template #infoText2>
-      <p class="">Get to know you better.</p>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

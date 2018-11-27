@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Monomeal } from '../monomeal.model';
 import { MonomealService } from '../monomeal.service';
@@ -8,9 +9,10 @@ import { MonomealService } from '../monomeal.service';
   templateUrl: './monomeal-detail.component.html'
 })
 export class MonomealDetailComponent implements OnInit {
-  @Input() monomeal: Monomeal;
+  monomeal: Monomeal;
 
-  constructor(private monomealService: MonomealService) { }
+  constructor(private monomealService: MonomealService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
   }

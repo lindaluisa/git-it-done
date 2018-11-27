@@ -1,5 +1,9 @@
-<a style = "cursor: pointer;" class="list-group-item clearfix" 
-(click)="onSelected()">
+<!-- usually simply routerLink="" but in this case it must be dynamically coded -->
+<!-- passing an array -->
+<a style = "cursor: pointer;"  
+  [routerLink]="[index]" 
+  routerLinkActive="active"
+   class="list-group-item clearfix">
 <div class="pull-left">
   <h4 class="list-group-item-heading"> {{ monomeal.name }} </h4>
   <p class="list-group-item-text" style="max-height: 50px;"> {{ monomeal.description }} </p>

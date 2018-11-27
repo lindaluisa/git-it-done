@@ -14,6 +14,8 @@ import { FeedbackEditComponent } from './feedback-list/feedback-edit/feedback-ed
 import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 import { FeedbackListService } from './feedback-list/feedback-list.service';
 import { AppRoutingModule } from './app-routing.module';
+import { MonomealStartComponent } from './monomeals/monomeal-start/monomeal-start.component';
+import { MonomealEditComponent } from './monomeals/monomeal-edit/monomeal-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     MonomealItemComponent,
     FeedbackListComponent,
     FeedbackEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    MonomealStartComponent,
+    MonomealEditComponent
   ],
   imports: [
     BrowserModule,

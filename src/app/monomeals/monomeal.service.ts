@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Monomeal } from './monomeal.model';
 import { Wellbeing } from '../shared/wellbeing.model';
@@ -7,7 +7,6 @@ import { FeedbackListService } from '../feedback-list/feedback-list.service';
 
 @Injectable()
 export class MonomealService  {
-  monomealSelected = new EventEmitter<Monomeal>();
   private monomeals: Monomeal[] = [
       // tslint:disable-next-line:max-line-length
       new Monomeal('Strawberries', 'This is simply a berry test', 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Strawberry_fruit.jpg', 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Monomeal } from './monomeal.model';
 import { MonomealService } from './monomeal.service';
 
 @Component({
@@ -9,17 +8,10 @@ import { MonomealService } from './monomeal.service';
   providers: [MonomealService]
 })
 export class MonomealsComponent implements OnInit {
-  selectedMonomeal: Monomeal;
 
-  constructor(private monomealService: MonomealService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.monomealService.monomealSelected
-    .subscribe(
-      (monomeal: Monomeal) => {
-        this.selectedMonomeal = monomeal;
-      }
-    );
   }
 
 }

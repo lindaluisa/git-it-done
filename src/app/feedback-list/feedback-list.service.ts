@@ -1,8 +1,8 @@
 import { Wellbeing } from "../shared/wellbeing.model";
-import { EventEmitter } from "@angular/core";
+import { Subject } from "../../../node_modules/rxjs";
 
 export class FeedbackListService {
-  updatedWellbeing = new EventEmitter<Wellbeing[]>();
+  updatedWellbeing = new Subject<Wellbeing[]>();
 
   private overallWellbeing: Wellbeing[] = [
       new Wellbeing('Strawberries', 8),
@@ -15,7 +15,7 @@ export class FeedbackListService {
 
   addWellbeing(wellbeing: Wellbeing) {
     this.overallWellbeing.push(wellbeing);
-    this.updatedWellbeing.emit(this.overallWellbeing.slice());
+    this.updatedWellbeing.next(this.overallWellbeing.slice());
   }
 
   addStates(states: Wellbeing[]) {
@@ -23,7 +23,7 @@ export class FeedbackListService {
       this.addWellbeing(state);
     } */
     this.overallWellbeing.push(...states);
-    this.updatedWellbeing.emit(this.overallWellbeing.slice());
+    this.updatedWellbeing.next(this.overallWellbeing.slice());
   }
 }
 

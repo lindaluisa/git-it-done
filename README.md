@@ -1,9 +1,9 @@
 # Monomeal
-:watermelon: :strawberry: :apple:
+
  
 An application built with **Angular 7** helping you track your energy levels depending on the food you eat. 
 
-> Fill yourself up on ONE thing and check your physical and mental state.
+> Fill yourself up on ONE thing and check your physical and mental state. :watermelon: :strawberry: :apple:
 
 Code base:
 - [x] Event Binding

@@ -1,4 +1,4 @@
-#Monomeal #:watermelon: #:strawberry: #:apple:
+# Monomeal # :watermelon: # :strawberry: # :apple:
  
 An application built with **Angular 7** helping you track your energy levels depending on the food you eat. 
 

@@ -1,4 +1,28 @@
-# Monomeal
+# Monomeal :watermelon: :strawberry: :apple:
+ 
+An application built with **Angular 7** helping you track your energy levels depending on the food you eat. 
+
+> Fill yourself up on ONE thing and check your physical and mental state.
+
+Code base:
+- [x] Event Binding
+- [x] Property Binding
+- [x] Two-way Binding
+- [x] ng-template
+- [x] Local Reference 
+- [x] Attribute and Structural Directive
+- [x] Services
+- [x] Injecting a service into another service
+- [x] Routing
+- [x] Child Routes
+- [x] routerLink
+- [x] retrieving route params
+- [x] params as inbuilt oberservable
+- [ ] Forms 
+- [ ] Pipes
+- [ ] Firebase to handle CRUD operations
+- [ ] Authentication with JWT
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 

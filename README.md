@@ -1,10 +1,10 @@
 # Monomeal
 
  
-An application built with **Angular 7** helping you track your energy levels depending on the food you eat. Fill yourself up on ONE thing and check your physical and mental state 
+An application built with **Angular 7** helping you track your energy levels depending on the food you eat. Fill yourself up on ONE thing and check your physical and mental state. :watermelon: :strawberry: :apple:  
 
 In the words of Hippokrates:
-> Let food be thy medicine and medicine be thy food." :watermelon: :strawberry: :apple:
+> "Let food be thy medicine and medicine be thy food." 
 
 
 Code base:

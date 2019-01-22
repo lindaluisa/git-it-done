@@ -3,6 +3,7 @@ import { Subject } from "../../../node_modules/rxjs";
 
 export class FeedbackListService {
   updatedWellbeing = new Subject<Wellbeing[]>();
+  startedEditing = new Subject<number>();
 
   private overallWellbeing: Wellbeing[] = [
       new Wellbeing('Strawberries', 8),

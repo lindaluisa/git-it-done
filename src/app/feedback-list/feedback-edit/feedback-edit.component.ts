@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Wellbeing } from '../../shared/wellbeing.model';
 import { FeedbackListService } from '../feedback-list.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-feedback-edit',
@@ -10,11 +11,21 @@ import { FeedbackListService } from '../feedback-list.service';
   styleUrls: ['./feedback-edit.component.css']
 })
 
-export class FeedbackEditComponent implements OnInit {
+export class FeedbackEditComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
+  editMode = false;
+  editedItemIndex: number;
 
   constructor(private feedbacklistService: FeedbackListService) { }
 
   ngOnInit() {
+    this.feedbacklistService.startedEditing
+      .subscribe(
+        (index:number) => {
+          this.editedItemIndex = index;
+          this.editMode = true;
+        }
+      );
   }
 
   onAddState(form: NgForm) {
@@ -23,4 +34,7 @@ export class FeedbackEditComponent implements OnInit {
     this.feedbacklistService.addWellbeing(newWellbeing);
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

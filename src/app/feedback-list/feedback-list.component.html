@@ -6,7 +6,8 @@
       <a 
         class="list-group-item"  
         style="cursor: pointer"
-        *ngFor="let wellbeing of overallWellbeing"
+        *ngFor="let wellbeing of overallWellbeing ; let i = index"
+        (click)="onEditItem(i)"
         >
       {{ wellbeing.name }}: {{ wellbeing.state }}
     </a>

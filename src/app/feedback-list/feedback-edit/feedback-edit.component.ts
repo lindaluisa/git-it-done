@@ -15,6 +15,7 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
+  editedItem: Wellbeing;
 
   constructor(private feedbacklistService: FeedbackListService) { }
 
@@ -24,6 +25,7 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
         (index:number) => {
           this.editedItemIndex = index;
           this.editMode = true;
+          this.editedItem = this.feedbacklistService.getWellbeingState(index);
         }
       );
   }

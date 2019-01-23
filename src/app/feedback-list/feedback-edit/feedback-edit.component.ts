@@ -50,10 +50,14 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
     this.editMode = false;
     form.reset();
   }
-  
+
   onClear() {
     this.fbForm.reset();
     this.editMode = false;
+  }
+
+  onDelete() {
+    this.onClear();
   }
 
   ngOnDestroy() {

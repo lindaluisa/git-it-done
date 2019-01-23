@@ -39,10 +39,16 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
       );
   }
 
-  onAddState(form: NgForm) {
+  onUpdateOrAddState(form: NgForm) {
     const value = form.value;
     const newWellbeing = new Wellbeing(value.name, value.state);
-    this.feedbacklistService.addWellbeing(newWellbeing);
+    if (this.editMode) {
+      this.feedbacklistService.updateState(this.editedItemIndex, newWellbeing);
+    } else {
+      this.feedbacklistService.addWellbeing(newWellbeing);
+    }
+    this.editMode = false;
+    form.reset();
   }
 
   ngOnDestroy() {

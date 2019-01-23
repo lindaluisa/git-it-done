@@ -30,5 +30,10 @@ export class FeedbackListService {
     this.overallWellbeing.push(...states);
     this.updatedWellbeing.next(this.overallWellbeing.slice());
   }
+
+  updateState(index: number, newState: Wellbeing) {
+    this.overallWellbeing[index] = newState;
+    this.updatedWellbeing.next(this.overallWellbeing.slice()); 
+  }
 }
 

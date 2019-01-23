@@ -1,4 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  OnDestroy,
+  ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Wellbeing } from '../../shared/wellbeing.model';
@@ -12,6 +16,7 @@ import { Subscription } from 'rxjs';
 })
 
 export class FeedbackEditComponent implements OnInit, OnDestroy {
+  @ViewChild('f') fbForm: NgForm;
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
@@ -26,6 +31,10 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
           this.editedItemIndex = index;
           this.editMode = true;
           this.editedItem = this.feedbacklistService.getWellbeingState(index);
+          this.fbForm.setValue({
+            name: this.editedItem.name,
+            state: this.editedItem.state
+          })
         }
       );
   }

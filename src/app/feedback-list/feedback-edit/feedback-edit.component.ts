@@ -57,6 +57,7 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
   }
 
   onDelete() {
+    this.feedbacklistService.deleteWellbeing(this.editedItemIndex);
     this.onClear();
   }
 

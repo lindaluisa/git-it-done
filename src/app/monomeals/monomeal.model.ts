@@ -1,4 +1,4 @@
-import { Wellbeing } from "../shared/wellbeing.model";
+import { Wellbeing } from '../shared/wellbeing.model';
 
 
 export class Monomeal {

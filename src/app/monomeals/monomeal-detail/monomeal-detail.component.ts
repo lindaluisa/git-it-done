@@ -22,7 +22,7 @@ export class MonomealDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id']; // the upfront + force it into a number
-          this.monomeal = this.monomealService.getMonomeal(this.id);
+          this.monomeal = this.monomealService.getSingleMonomeal(this.id);
         }
       )
 }

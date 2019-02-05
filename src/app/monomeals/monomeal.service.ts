@@ -28,8 +28,8 @@ export class MonomealService  {
     return this.monomeals.slice();
   }
 
-  getMonomeal(id: number) {
-    return this.monomeals[id]
+  getSingleMonomeal(id: number) {
+    return this.monomeals[id];
   }
 
   addStatesToFeedbackList(states: Wellbeing[]) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FormGroup, FormControl } from '../../../../node_modules/@angular/forms';
 
 @Component({
   selector: 'app-monomeal-edit',
@@ -9,6 +10,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class MonomealEditComponent implements OnInit {
   id: number;
   editMode = false;
+  monomealEditForm: FormGroup;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -18,9 +20,15 @@ export class MonomealEditComponent implements OnInit {
           (params: Params) => {
             this.id = +params['id'];
             this.editMode = params['id'] != null;
-            console.log(this.editMode);          
+            console.log(this.editMode);
           }
         );
   }
+
+/*   private initForm() {
+    this.initForm = new FormGroup({
+      'name': new FormControl()
+    });
+  } */
 
 }

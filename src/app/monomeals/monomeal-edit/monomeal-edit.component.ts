@@ -24,6 +24,7 @@ export class MonomealEditComponent implements OnInit {
             this.id = +params['id'];
             this.editMode = params['id'] != null;
             console.log(this.editMode);
+            this.initForm();
           }
         );
   }

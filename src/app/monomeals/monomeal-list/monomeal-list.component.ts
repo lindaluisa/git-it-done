@@ -17,7 +17,12 @@ export class MonomealListComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.monomeals = this.monomealService.getMonomeals();
+    this.monomealService.monomealUpdated
+      .subscribe(
+        (monomeals: Monomeal[]) => {
+          this.monomeals = monomeals;
+        });
+      this.monomeals = this.monomealService.getMonomeals();
   }
 
   onNewMonomeal() {

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { FormGroup, FormControl, FormArray } from '../../../../node_modules/@angular/forms';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { MonomealService } from '../monomeal.service';
+import { Monomeal } from 'src/app/monomeals/monomeal.model';
 
 @Component({
   selector: 'app-monomeal-edit',
-  templateUrl: './monomeal-edit.component.html',
-  styleUrls: ['./monomeal-edit.component.scss']
+  templateUrl: './monomeal-edit.component.html'
 })
 export class MonomealEditComponent implements OnInit {
   id: number;
@@ -30,7 +30,29 @@ export class MonomealEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.monomealEditForm);
+    // const newMonomeal = new Monomeal(
+    //   this.monomealEditForm.value['name'],
+    //   this.monomealEditForm.value['description'],
+    //   this.monomealEditForm.value['imagePath'],
+    //   this.monomealEditForm.value['wellbeings']);
+    //   and then passing newMonomeal as second parameter
+    if (this.editMode) {
+      this.monomealService.updateMonomeal(this.id, this.monomealEditForm.value);
+    } else {
+      this.monomealService.addMonomeal(this.monomealEditForm.value);
+    }
+  }
+
+  onAddState() {
+    (<FormArray>this.monomealEditForm.get('wellbeings')).push(
+      new FormGroup({
+        'name': new FormControl(null, Validators.required),
+        'state': new FormControl(null, [
+          Validators.required,
+          Validators.pattern(/^[1-9]+[0-9]*$/)
+        ])
+      })
+    );
   }
 
   private initForm() {
@@ -48,17 +70,20 @@ export class MonomealEditComponent implements OnInit {
         for (let wellbeing of monomealToEdit.wellbeings) {
           monomealStates.push(
             new FormGroup({
-              'name': new FormControl(wellbeing.name),
-              'state': new FormControl(wellbeing.state)
+              'name': new FormControl(wellbeing.name, Validators.required),
+              'state': new FormControl(wellbeing.state, [
+                Validators.required,
+                Validators.pattern(/^[1-9]+[0-9]*$/)
+              ])
             })
           );
         }
       }
     }
     this.monomealEditForm = new FormGroup({
-      'name': new FormControl(monomealName),
-      'imagePath': new FormControl(monomealImagePath),
-      'description': new FormControl(monomealDescription),
+      'name': new FormControl(monomealName, Validators.required),
+      'imagePath': new FormControl(monomealImagePath, Validators.required),
+      'description': new FormControl(monomealDescription, Validators.required),
       'wellbeings': monomealStates // is already FormArray (see above)
     });
   }

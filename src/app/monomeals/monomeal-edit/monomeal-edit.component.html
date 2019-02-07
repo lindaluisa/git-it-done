@@ -53,33 +53,50 @@
             <!-- access to controls via index to access specific -->
             <!-- access to array in whole via new FormGroup -->
             <div 
-              class="row"
+              class="row stateList"
               *ngFor="let monomealStateControl of getControls(); let i = index"
               [formGroupName]="i">
               <div class="col-xs-8">
                 <!-- access to FormControl -->
                 <input 
-                type="text"
-                  class="form-control"
+                  type="text"
+                  class="form-control list-group-item"
                   formControlName="name">
                 </div>
               <div class="col-xs-2">
                 <input 
                 type="text"
-                  class="form-control"
+                  class="form-control list-group-item"
                   formControlName="state">
                 </div>
               <div class="col-xs-2">
               <button class="btn btn-danger">X</button>
             </div>
           </div>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="button"
+                class="btn default-button"
+                (click)="onAddState()">Add Wellbeing</button>
+            </div>
+          </div>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="default-button btn">Save </button> 
+          <button 
+            type="submit" 
+            class="default-button btn"
+            [disabled]="!monomealEditForm.valid">Save </button> 
           <span style="padding: 2.5em">   </span>
-          <button type="button" class="default-button btn">Cancel</button>
+          <button 
+            type="button" 
+            class="default-button btn"
+            (click)="onCancel()">Cancel</button>
         </div>
       </div>
     </form>

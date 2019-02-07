@@ -27,14 +27,14 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.feedbacklistService.startedEditing
       .subscribe(
-        (index:number) => {
+        (index: number) => {
           this.editedItemIndex = index;
           this.editMode = true;
           this.editedItem = this.feedbacklistService.getWellbeingState(index);
           this.fbForm.setValue({
             name: this.editedItem.name,
             state: this.editedItem.state
-          })
+          });
         }
       );
   }

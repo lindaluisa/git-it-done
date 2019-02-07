@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
       <p class="cta-text"> Please select a Monomeal!</p>
-
-    <app-monomeal-item
-    *ngFor="let monomEl of monomeals; let i = index"
-    [monomeal]="monomEl"
-    [index]="i"></app-monomeal-item>
+    <div >      
+      <app-monomeal-item
+      class="active"
+        *ngFor="let monomEl of monomeals; let i = index"
+        [monomeal]="monomEl"
+        [index]="i"></app-monomeal-item>
+    </div>
   </div>
 </div>
 <br>

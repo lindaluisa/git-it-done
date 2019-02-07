@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { MonomealService } from '../monomeal.service';
-import { Monomeal } from 'src/app/monomeals/monomeal.model';
 
 @Component({
   selector: 'app-monomeal-edit',
@@ -15,17 +14,18 @@ export class MonomealEditComponent implements OnInit {
   monomealEditForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
-              private monomealService: MonomealService) { }
+              private monomealService: MonomealService,
+              private router: Router) { }
 
   ngOnInit() {
-      this.route.params
-        .subscribe(
-          (params: Params) => {
-            this.id = +params['id'];
-            this.editMode = params['id'] != null;
-            console.log(this.editMode);
-            this.initForm();
-          }
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
+          console.log(this.editMode);
+          this.initForm();
+        }
         );
   }
 
@@ -41,6 +41,7 @@ export class MonomealEditComponent implements OnInit {
     } else {
       this.monomealService.addMonomeal(this.monomealEditForm.value);
     }
+    this.onCancel(); // fn navigates away
   }
 
   onAddState() {
@@ -53,6 +54,10 @@ export class MonomealEditComponent implements OnInit {
         ])
       })
     );
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   private initForm() {

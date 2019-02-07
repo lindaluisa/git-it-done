@@ -39,5 +39,6 @@ export class MonomealDetailComponent implements OnInit {
 
   onDeleteMonomeal() {
     this.monomealService.deleteMonomeal(this.id);
+    this.router.navigate(['/monomeals'], {relativeTo: this.route});
   }
 }

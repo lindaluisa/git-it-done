@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from "../../../node_modules/rxjs";
+import { Subject } from '../../../node_modules/rxjs';
 
 import { Monomeal } from './monomeal.model';
 import { Wellbeing } from '../shared/wellbeing.model';
@@ -49,7 +49,6 @@ export class MonomealService  {
     this.monomeals[index] = newMonomeal;
     this.monomealUpdated.next(this.monomeals.slice());
   }
-
 
   deleteMonomeal(index: number) {
     this.monomeals.splice(index, 1);

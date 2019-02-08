@@ -16,6 +16,7 @@ import { FeedbackListService } from './feedback-list/feedback-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MonomealStartComponent } from './monomeals/monomeal-start/monomeal-start.component';
 import { MonomealEditComponent } from './monomeals/monomeal-edit/monomeal-edit.component';
+import { MonomealService } from 'src/app/monomeals/monomeal.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,10 @@ import { MonomealEditComponent } from './monomeals/monomeal-edit/monomeal-edit.c
     ReactiveFormsModule
 
   ],
-  providers: [FeedbackListService],
+  providers: [
+    FeedbackListService,
+    MonomealService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

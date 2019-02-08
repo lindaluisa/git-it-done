@@ -1,13 +1,13 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
   OnDestroy,
   ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Wellbeing } from '../../shared/wellbeing.model';
 import { FeedbackListService } from '../feedback-list.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-feedback-edit',
@@ -61,7 +61,9 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
     this.onClear();
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

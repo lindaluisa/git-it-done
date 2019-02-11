@@ -1,0 +1,11 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.stateList {
+  background-color: $secondary-color-dark;
+  box-shadow: 0px 8px 0 0 $primary-color-light;
+  margin-bottom: 1.5em;
+  border-radius: 0px !important;
+}

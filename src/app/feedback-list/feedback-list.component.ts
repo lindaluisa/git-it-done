@@ -17,7 +17,7 @@ export class FeedbackListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.overallWellbeing = this.feedbacklistService.getWellbeing();
-    this.subscription = this.feedbacklistService.updatedWellbeing
+    this.subscription = this.feedbacklistService.wellbeingUpdated
       .subscribe(
         (wellbeing: Wellbeing[]) => {
           this.overallWellbeing = wellbeing;

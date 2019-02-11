@@ -1,3 +1,4 @@
+<div class="custom-container">
 <div class="row">
   <div class="col-xs-12">
     <img [src]="monomeal.imagePath" alt="{{ monomeal.name }}" class="img-responsive">
@@ -8,6 +9,7 @@
     <h1>{{ monomeal.name }} </h1>
   </div>
 </div>
+<br>
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group"
@@ -18,9 +20,9 @@
       Manage Monomeal <span class="caret"></span>
       </button>
       <ul class="default-button dropdown-menu">
-        <li><a (click)="onAddToFeedbackList()" style="cursor: pointer;"> To Monmoeal </a></li>
+        <li><a (click)="onAddToFeedbackList()" style="cursor: pointer;"> To Feedback List </a></li>
         <li><a (click)="onEditMonomeal()" style="cursor:pointer;"> Edit Monmoeal </a></li>
-        <li><a style="cursor:pointer;"> Delete Monmoeal </a></li>
+        <li><a (click)="onDeleteMonomeal()" style="cursor:pointer;"> Delete Monmoeal </a></li>
       </ul>
     </div>
   </div>
@@ -39,4 +41,5 @@
       </li>
     </ul>
   </div>
+</div>
 </div>

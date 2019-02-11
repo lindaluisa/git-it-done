@@ -22,9 +22,9 @@ export class MonomealDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id']; // the upfront + force it into a number
-          this.monomeal = this.monomealService.getMonomeal(this.id);
+          this.monomeal = this.monomealService.getSingleMonomeal(this.id);
         }
-      )
+      );
 }
 
 
@@ -35,5 +35,10 @@ export class MonomealDetailComponent implements OnInit {
   onEditMonomeal() {
     this.router.navigate(['edit'], { relativeTo: this.route });
 /*     this.router.navigate(['../', this.id], { relativeTo: this.route }); */
+  }
+
+  onDeleteMonomeal() {
+    this.monomealService.deleteMonomeal(this.id);
+    this.router.navigate(['/monomeals'], {relativeTo: this.route});
   }
 }

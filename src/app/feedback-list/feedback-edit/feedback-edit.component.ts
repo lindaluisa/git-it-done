@@ -61,7 +61,7 @@ export class FeedbackEditComponent implements OnInit, OnDestroy {
     this.onClear();
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

@@ -19,7 +19,7 @@ export class DataStorageService {
       .subscribe(
         (response: Response) => {
           const monomeals: Monomeal[] = response.json();
-          this.mmService.
+          this.mmService.setMonomeals(monomeals);
         }
       );
   }

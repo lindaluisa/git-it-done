@@ -32,18 +32,13 @@ export class MonomealService  {
     return this.monomeals.slice();
   }
 
-<<<<<<< Updated upstream
   getSingleMonomeal(id: number) {
-=======
-  getMonomeal(id: number) {
->>>>>>> Stashed changes
     return this.monomeals[id];
   }
 
   addStatesToFeedbackList(states: Wellbeing[]) {
     this.feedbackListService.addStates(states);
   }
-<<<<<<< Updated upstream
 
   addMonomeal(monomeal: Monomeal) {
     this.monomeals.push(monomeal);
@@ -61,6 +56,3 @@ export class MonomealService  {
   }
 }
 
-=======
-}
->>>>>>> Stashed changes

@@ -40,6 +40,7 @@ import { HttpModule } from '../../node_modules/@angular/http';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [FeedbackListService, MonomealService, DataStorageService],

@@ -1,5 +1,6 @@
 import { Injectable } from '../../../node_modules/@angular/core';
 import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 import { MonomealService } from '../monomeals/monomeal.service';
 import { Monomeal } from '../monomeals/monomeal.model';
@@ -16,10 +17,21 @@ export class DataStorageService {
 
   getMonomeals() {
     return this.http.get('https://monomeals.firebaseio.com/monomeals.json')
-      .subscribe(
+      .map(
         (response: Response) => {
           const monomeals: Monomeal[] = response.json();
-          this.mmService.setMonomeals();
+          for (let monomeal of monomeals) {
+            if (!monomeal['wellbeings']) {
+              console.log(monomeal);
+              monomeal['wellbeings'] = [];
+            }
+          }
+          return monomeals;
+        }
+      )
+      .subscribe(
+        (monomeals: Monomeal[]) => {
+          this.mmService.setMonomeals(monomeals);
         }
       );
   }

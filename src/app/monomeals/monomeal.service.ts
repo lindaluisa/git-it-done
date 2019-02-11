@@ -28,8 +28,8 @@ export class MonomealService  {
 
   constructor( private feedbackListService: FeedbackListService) {}
 
-  setMonomeals() {
-    this.monomeals = this.monomeals;
+  setMonomeals(monomeals: Monomeal[]) {
+    this.monomeals = monomeals;
     this.monomealUpdated.next(this.monomeals.slice());
   }
 

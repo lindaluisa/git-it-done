@@ -56,6 +56,11 @@ export class MonomealEditComponent implements OnInit {
     );
   }
 
+  onDeleteState(index: number) {
+    (<FormArray>this.monomealEditForm.get('wellbeings')).removeAt(index);
+  }
+
+
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
